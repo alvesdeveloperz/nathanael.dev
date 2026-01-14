@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathanael Vieira Alves | Desenvolvedor Front-End</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #64ffda #0a192f;
+    }
+    
+    *::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    *::-webkit-scrollbar-track {
+      background: #0a192f;
+    }
+    
+    *::-webkit-scrollbar-thumb {
+      background-color: #64ffda;
+      border-radius: 4px;
+    }
+    
+    .font-mono {
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .font-sans {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #64ffda 0%, #00d4aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glow {
+      box-shadow: 0 0 20px rgba(100, 255, 218, 0.15);
+    }
+    
+    .glow-hover:hover {
+      box-shadow: 0 0 30px rgba(100, 255, 218, 0.25);
+    }
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #64ffda;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .fade-in-delay-1 { animation-delay: 0.1s; }
+    .fade-in-delay-2 { animation-delay: 0.2s; }
+    .fade-in-delay-3 { animation-delay: 0.3s; }
+    .fade-in-delay-4 { animation-delay: 0.4s; }
+    .fade-in-delay-5 { animation-delay: 0.5s; }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .section-number {
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .skill-tag {
+      transition: all 0.2s ease;
+    }
+    
+    .skill-tag:hover {
+      transform: scale(1.05);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-sans">
+  <div id="app-wrapper" class="h-full w-full overflow-auto" style="background-color: #0a192f;"><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 backdrop-blur-md" style="background-color: rgba(10, 25, 47, 0.85);">
+    <div class="max-w-6xl mx-auto flex items-center justify-between"><a href="#" class="text-[#64ffda] font-mono text-xl font-bold hover:opacity-80 transition-opacity"> &lt;NV /&gt; </a>
+     <div class="hidden md:flex items-center gap-8"><a href="#about" class="nav-link text-slate-300 hover:text-[#64ffda] transition-colors font-mono text-sm"> <span class="text-[#64ffda]">01.</span> Sobre </a> <a href="#projects" class="nav-link text-slate-300 hover:text-[#64ffda] transition-colors font-mono text-sm"> <span class="text-[#64ffda]">02.</span> Projetos </a> <a href="#achievements" class="nav-link text-slate-300 hover:text-[#64ffda] transition-colors font-mono text-sm"> <span class="text-[#64ffda]">03.</span> Conquistas </a> <a href="#skills" class="nav-link text-slate-300 hover:text-[#64ffda] transition-colors font-mono text-sm"> <span class="text-[#64ffda]">04.</span> Habilidades </a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="min-h-screen flex items-center px-6 lg:px-12 pt-20">
+    <div class="max-w-6xl mx-auto w-full">
+     <p id="hero-greeting" class="text-[#64ffda] font-mono mb-4 fade-in fade-in-delay-1">Olá, meu nome é</p>
+     <h1 id="hero-name" class="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-200 mb-4 fade-in fade-in-delay-2">Nathanael Vieira Alves.</h1>
+     <p class="max-w-xl text-slate-400 text-lg leading-relaxed mb-12 fade-in fade-in-delay-4">Sou um estudante de <span class="text-[#64ffda]">15 anos</span> apaixonado por tecnologia e desenvolvimento web. Atualmente focado em aprender e criar interfaces incríveis com <span class="text-[#64ffda]">HTML, CSS e JavaScript</span>.</p><a href="#about" class="inline-block px-8 py-4 border border-[#64ffda] text-[#64ffda] rounded font-mono hover:bg-[#64ffda]/10 transition-all glow-hover fade-in fade-in-delay-5"> Conheça minha história → </a>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-24 px-6 lg:px-12">
+    <div class="max-w-4xl mx-auto">
+     <div class="flex items-center gap-4 mb-12"><span class="text-[#64ffda] font-mono">01.</span>
+      <h2 id="about-title" class="text-2xl md:text-3xl font-bold text-slate-200">Sobre Mim</h2>
+      <div class="flex-1 h-px bg-slate-700 max-w-xs"></div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-4 text-slate-400 leading-relaxed">
+       <p>Olá! Meu nome é <span class="text-[#64ffda]">Nathanael</span> e sou um jovem de 15 anos completamente apaixonado pelo mundo da tecnologia. Minha jornada na programação começou com a curiosidade de entender como os sites que eu visitava eram feitos.</p>
+       <p>Atualmente, estou focado em me tornar um <span class="text-[#64ffda]">Desenvolvedor Front-End</span>, estudando intensivamente HTML, CSS e JavaScript. Acredito que a combinação de código limpo com design intuitivo cria experiências digitais memoráveis.</p>
+       <p>Além da programação, fui selecionado para um <span class="text-[#64ffda]">programa de intercâmbio para Cambridge, Inglaterra</span>, onde terei a oportunidade de aprimorar meu inglês e expandir meus horizontes culturais.</p>
+       <p>Também conquistei a aprovação no <span class="text-[#64ffda]">IFAL - Campus Santana do Ipanema</span>, uma das instituições federais mais conceituadas de Alagoas, o que representa um grande passo na minha trajetória acadêmica.</p>
+      </div>
+      <div class="relative group">
+       <div class="relative z-10 rounded-lg overflow-hidden glow">
+        <div class="w-full aspect-square bg-gradient-to-br from-[#64ffda]/20 to-[#0a192f] rounded-lg flex items-center justify-center">
+         <div class="text-center">
+          <img src="./minha-foto.jpg" alt="Nathanael" class="w-32 h-32 mx-auto rounded-full object-cover border-2 border-[#64ffda]">
+          <p class="mt-4 text-slate-400 font-mono text-sm">@nathanael.dev</p>
+         </div>
+        </div>
+       </div>
+       <div class="absolute inset-0 border-2 border-[#64ffda] rounded-lg translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform"></div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="py-24 px-6 lg:px-12">
+    <div class="max-w-4xl mx-auto">
+     <div class="flex items-center gap-4 mb-12"><span class="text-[#64ffda] font-mono">02.</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-200">Meus Projetos</h2>
+      <div class="flex-1 h-px bg-slate-700 max-w-xs"></div>
+     </div>
+     <div class="space-y-8"><!-- Project 1 -->
+      <div class="card-hover p-6 rounded-lg border border-slate-700/50 hover:border-[#64ffda]/50 transition-colors" style="background-color: rgba(17, 34, 64, 0.7);">
+       <div class="flex items-start gap-4">
+        <div class="p-3 rounded-lg bg-[#64ffda]/10 text-[#64ffda]">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" />
+         </svg>
+        </div>
+        <div class="flex-1">
+         <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-semibold text-slate-200">Device Tree - Poco X3 NFC</h3><span class="px-2 py-1 text-xs font-mono bg-[#64ffda]/10 text-[#64ffda] rounded">surya</span>
+         </div>
+         <p class="text-slate-400 mb-4">Device tree customizado para Poco X3 NFC (surya) desenvolvido para ROMs customizadas. Inclui configurações de hardware otimizadas e drivers específicos do dispositivo.</p>
+         <div class="flex items-center gap-4 text-sm flex-wrap"><a href="https://github.com/alvesdeveloperz/android_device_xiaomi_surya" target="_blank" rel="noopener noreferrer" class="text-[#64ffda] font-mono hover:underline flex items-center gap-2">
+           <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+           </svg> Ver no GitHub </a> <span class="text-slate-500">•</span> <span class="text-slate-400">Android ROM Development</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Project 2 -->
+      <div class="card-hover p-6 rounded-lg border border-slate-700/50 hover:border-[#64ffda]/50 transition-colors" style="background-color: rgba(17, 34, 64, 0.7);">
+       <div class="flex items-start gap-4">
+        <div class="p-3 rounded-lg bg-[#64ffda]/10 text-[#64ffda]">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" />
+         </svg>
+        </div>
+        <div class="flex-1">
+         <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-semibold text-slate-200">Device Tree - Xiaomi Mi 9 Lite</h3><span class="px-2 py-1 text-xs font-mono bg-[#64ffda]/10 text-[#64ffda] rounded">pyxis</span>
+         </div>
+         <p class="text-slate-400 mb-4">Device tree customizado para Xiaomi Mi 9 Lite (pyxis) com suporte a ROMs customizadas. Otimizações de performance e estabilidade específicas do hardware Qualcomm.</p>
+         <div class="flex items-center gap-4 text-sm flex-wrap"><a href="https://github.com/alvesdeveloperz/device_xiaomi_pyxis" target="_blank" rel="noopener noreferrer" class="text-[#64ffda] font-mono hover:underline flex items-center gap-2">
+           <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+           </svg> Ver no GitHub </a> <span class="text-slate-500">•</span> <span class="text-slate-400">Android ROM Development</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Project 3 -->
+      <div class="card-hover p-6 rounded-lg border border-slate-700/50 hover:border-[#64ffda]/50 transition-colors" style="background-color: rgba(17, 34, 64, 0.7);">
+       <div class="flex items-start gap-4">
+        <div class="p-3 rounded-lg bg-[#64ffda]/10 text-[#64ffda]">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" />
+         </svg>
+        </div>
+        <div class="flex-1">
+         <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-semibold text-slate-200">Device Tree - Galaxy M52 5G</h3><span class="px-2 py-1 text-xs font-mono bg-[#64ffda]/10 text-[#64ffda] rounded">m52xq</span>
+         </div>
+         <p class="text-slate-400 mb-4">Device tree customizado para Samsung Galaxy M52 5G (m52xq) com suporte a ROMs customizadas. Configurações avançadas para processador Qualcomm com suporte 5G.</p>
+         <div class="flex items-center gap-4 text-sm flex-wrap"><a href="https://github.com/alvesdeveloperz/android_device_samsung_m52xq" target="_blank" rel="noopener noreferrer" class="text-[#64ffda] font-mono hover:underline flex items-center gap-2">
+           <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+           </svg> Ver no GitHub </a> <span class="text-slate-500">•</span> <span class="text-slate-400">Android ROM Development</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Project 4 -->
+      <div class="card-hover p-6 rounded-lg border border-slate-700/50 hover:border-[#64ffda]/50 transition-colors" style="background-color: rgba(17, 34, 64, 0.7);">
+       <div class="flex items-start gap-4">
+        <div class="p-3 rounded-lg bg-[#64ffda]/10 text-[#64ffda]">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" />
+         </svg>
+        </div>
+        <div class="flex-1">
+         <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-semibold text-slate-200">Wangari Project</h3><span class="px-2 py-1 text-xs font-mono bg-[#64ffda]/10 text-[#64ffda] rounded">Website</span>
+         </div>
+         <p class="text-slate-400 mb-4">Site desenvolvido para um trabalho escolar sobre o projeto Wangari. Um projeto educativo criado com HTML, CSS e JavaScript, focando em design responsivo e conteúdo informativo.</p>
+         <div class="flex items-center gap-4 text-sm flex-wrap"><a href="https://github.com/alvesdeveloperz/wangari-project" target="_blank" rel="noopener noreferrer" class="text-[#64ffda] font-mono hover:underline flex items-center gap-2">
+           <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+           </svg> Ver no GitHub </a> <span class="text-slate-500">•</span> <span class="text-slate-400">Front-End Web Development</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Achievements Section -->
+   <section id="achievements" class="py-24 px-6 lg:px-12" style="background-color: rgba(100, 255, 218, 0.02);">
+    <div class="max-w-4xl mx-auto">
+     <div class="flex items-center gap-4 mb-12"><span class="text-[#64ffda] font-mono">03.</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-200">Conquistas</h2>
+      <div class="flex-1 h-px bg-slate-700 max-w-xs"></div>
+     </div>
+     <div class="space-y-8"><!-- Achievement 1 -->
+      <div class="card-hover p-6 rounded-lg border border-slate-700/50 hover:border-[#64ffda]/50 transition-colors" style="background-color: rgba(17, 34, 64, 0.7);">
+       <div class="flex items-start gap-4">
+        <div class="p-3 rounded-lg bg-[#64ffda]/10 text-[#64ffda]">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+        </div>
+        <div class="flex-1">
+         <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-semibold text-slate-200">Intercâmbio para Cambridge</h3><span class="px-2 py-1 text-xs font-mono bg-[#64ffda]/10 text-[#64ffda] rounded">🇬🇧 Inglaterra</span>
+         </div>
+         <p class="text-slate-400 mb-3">Selecionado para um programa de intercâmbio em Cambridge, uma das cidades universitárias mais prestigiadas do mundo, para aprimorar meu inglês e vivenciar uma experiência internacional única.</p>
+         <div class="flex items-center gap-4 text-sm"><span class="text-[#64ffda] font-mono">📍 Cambridge, UK</span> <span class="text-slate-500">•</span> <span class="text-slate-400">Estudos de Inglês</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Achievement 2 -->
+      <div class="card-hover p-6 rounded-lg border border-slate-700/50 hover:border-[#64ffda]/50 transition-colors" style="background-color: rgba(17, 34, 64, 0.7);">
+       <div class="flex items-start gap-4">
+        <div class="p-3 rounded-lg bg-[#64ffda]/10 text-[#64ffda]">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+         </svg>
+        </div>
+        <div class="flex-1">
+         <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-semibold text-slate-200">Aprovação no IFAL</h3><span class="px-2 py-1 text-xs font-mono bg-[#64ffda]/10 text-[#64ffda] rounded">✅ Aprovado</span>
+         </div>
+         <p class="text-slate-400 mb-3">Conquistei a aprovação no processo seletivo do Instituto Federal de Alagoas - Campus Santana do Ipanema, uma das instituições de ensino técnico e superior mais reconhecidas do estado.</p>
+         <div class="flex items-center gap-4 text-sm"><span class="text-[#64ffda] font-mono">📍 Santana do Ipanema, AL</span> <span class="text-slate-500">•</span> <span class="text-slate-400">Instituto Federal</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Achievement 3 -->
+      <div class="card-hover p-6 rounded-lg border border-slate-700/50 hover:border-[#64ffda]/50 transition-colors" style="background-color: rgba(17, 34, 64, 0.7);">
+       <div class="flex items-start gap-4">
+        <div class="p-3 rounded-lg bg-[#64ffda]/10 text-[#64ffda]">
+         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+         </svg>
+        </div>
+        <div class="flex-1">
+         <div class="flex items-center gap-3 mb-2">
+          <h3 class="text-xl font-semibold text-slate-200">Estudante de Front-End</h3><span class="px-2 py-1 text-xs font-mono bg-[#64ffda]/10 text-[#64ffda] rounded">🚀 Em progresso</span>
+         </div>
+         <p class="text-slate-400 mb-3">Dedicando-me ao estudo de desenvolvimento web front-end, criando projetos práticos e construindo uma base sólida em HTML, CSS e JavaScript para me tornar um desenvolvedor completo.</p>
+         <div class="flex items-center gap-4 text-sm"><span class="text-[#64ffda] font-mono">💻 Web Development</span> <span class="text-slate-500">•</span> <span class="text-slate-400">Autodidata</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="py-24 px-6 lg:px-12">
+    <div class="max-w-4xl mx-auto">
+     <div class="flex items-center gap-4 mb-12"><span class="text-[#64ffda] font-mono">04.</span>
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-200">Habilidades</h2>
+      <div class="flex-1 h-px bg-slate-700 max-w-xs"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8"><!-- Technical Skills -->
+      <div class="p-6 rounded-lg border border-slate-700/50" style="background-color: rgba(17, 34, 64, 0.5);">
+       <h3 class="text-lg font-semibold text-slate-200 mb-6 flex items-center gap-2"><span class="text-[#64ffda]">▹</span> Tecnologias</h3>
+       <div class="flex flex-wrap gap-3"><span class="skill-tag px-4 py-2 rounded-full bg-[#64ffda]/10 text-[#64ffda] font-mono text-sm border border-[#64ffda]/30">HTML5</span> <span class="skill-tag px-4 py-2 rounded-full bg-[#64ffda]/10 text-[#64ffda] font-mono text-sm border border-[#64ffda]/30">CSS3</span> <span class="skill-tag px-4 py-2 rounded-full bg-[#64ffda]/10 text-[#64ffda] font-mono text-sm border border-[#64ffda]/30">JavaScript</span> <span class="skill-tag px-4 py-2 rounded-full bg-[#64ffda]/10 text-[#64ffda] font-mono text-sm border border-[#64ffda]/30">Git</span> <span class="skill-tag px-4 py-2 rounded-full bg-[#64ffda]/10 text-[#64ffda] font-mono text-sm border border-[#64ffda]/30">VS Code</span> <span class="skill-tag px-4 py-2 rounded-full bg-[#64ffda]/10 text-[#64ffda] font-mono text-sm border border-[#64ffda]/30">Responsivo</span>
+       </div>
+      </div><!-- Soft Skills -->
+      <div class="p-6 rounded-lg border border-slate-700/50" style="background-color: rgba(17, 34, 64, 0.5);">
+       <h3 class="text-lg font-semibold text-slate-200 mb-6 flex items-center gap-2"><span class="text-[#64ffda]">▹</span> Competências</h3>
+       <div class="flex flex-wrap gap-3"><span class="skill-tag px-4 py-2 rounded-full bg-slate-700/50 text-slate-300 font-mono text-sm border border-slate-600/50">Autodidata</span> <span class="skill-tag px-4 py-2 rounded-full bg-slate-700/50 text-slate-300 font-mono text-sm border border-slate-600/50">Criatividade</span> <span class="skill-tag px-4 py-2 rounded-full bg-slate-700/50 text-slate-300 font-mono text-sm border border-slate-600/50">Resolução de Problemas</span> <span class="skill-tag px-4 py-2 rounded-full bg-slate-700/50 text-slate-300 font-mono text-sm border border-slate-600/50">Inglês</span> <span class="skill-tag px-4 py-2 rounded-full bg-slate-700/50 text-slate-300 font-mono text-sm border border-slate-600/50">Trabalho em Equipe</span>
+       </div>
+      </div>
+     </div><!-- Learning Path -->
+     <div class="mt-12 p-6 rounded-lg border border-[#64ffda]/30 glow" style="background-color: rgba(100, 255, 218, 0.05);">
+      <h3 class="text-lg font-semibold text-slate-200 mb-4 flex items-center gap-2"><span class="text-[#64ffda]">🎯</span> Próximos Passos</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+       <div class="flex items-center gap-3 text-slate-400"><span class="text-[#64ffda]">▹</span> <span>React.js</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-400"><span class="text-[#64ffda]">▹</span> <span>Backend Development</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-400"><span class="text-[#64ffda]">▹</span> <span>TypeScript</span>
+       </div>
+      </div>
+      <p class="text-slate-400 mt-6 pt-6 border-t border-slate-700 text-sm"><span class="text-[#64ffda] font-semibold">Visão Futura:</span> Tornar-me um desenvolvedor <span class="text-[#64ffda]">Full Stack</span> completo, capaz de criar aplicações web modernas do frontend até o backend com excelência técnica e design intuitivo.</p>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 px-6 text-center">
+    <div class="flex items-center justify-center gap-6 mb-8">
+      <a href="https://github.com/alvesdeveloperz" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#64ffda] transition-colors transform hover:-translate-y-1 duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#64ffda] transition-colors transform hover:-translate-y-1 duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+      </a>
+      <a href="https://instagram.com/bettercallnathan_" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#64ffda] transition-colors transform hover:-translate-y-1 duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg>
+      </a>
+    </div>
+    <p class="text-slate-500 font-mono text-sm">Desenvolvido com 💚 por <span class="text-[#64ffda]">Nathanael Vieira Alves</span></p>
+    <p class="text-slate-600 font-mono text-xs mt-2">Inspirado por Brittany Chiang</p>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      hero_greeting: 'Olá, meu nome é',
+      hero_name: 'Nathanael Vieira Alves.',
+      hero_tagline: 'Construo experiências para a web.',
+      about_title: 'Sobre Mim',
+      projects_title: 'Meus Projetos',
+      contact_title: 'Entre em Contato',
+      contact_button: 'Diga Olá 👋',
+      background_color: '#0a192f',
+      surface_color: '#112240',
+      text_color: '#8892b0',
+      primary_action_color: '#64ffda',
+      secondary_action_color: '#ccd6f6'
+    };
+    
+    async function onConfigChange(config) {
+      const heroGreeting = document.getElementById('hero-greeting');
+      const heroName = document.getElementById('hero-name');
+      const heroTagline = document.getElementById('hero-tagline');
+      const aboutTitle = document.getElementById('about-title');
+      const projectsTitle = document.getElementById('projects-title');
+      const contactTitle = document.getElementById('contact-title');
+      const contactButton = document.getElementById('contact-button');
+      const appWrapper = document.getElementById('app-wrapper');
+      
+      if (heroGreeting) heroGreeting.textContent = config.hero_greeting || defaultConfig.hero_greeting;
+      if (heroName) heroName.textContent = config.hero_name || defaultConfig.hero_name;
+      if (heroTagline) heroTagline.textContent = config.hero_tagline || defaultConfig.hero_tagline;
+      if (aboutTitle) aboutTitle.textContent = config.about_title || defaultConfig.about_title;
+      if (projectsTitle) projectsTitle.textContent = config.projects_title || defaultConfig.projects_title;
+      if (contactTitle) contactTitle.textContent = config.contact_title || defaultConfig.contact_title;
+      if (contactButton) contactButton.textContent = config.contact_button || defaultConfig.contact_button;
+      
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+      
+      if (appWrapper) appWrapper.style.backgroundColor = bgColor;
+      
+      document.querySelectorAll('.text-slate-400').forEach(el => el.style.color = textColor);
+      document.querySelectorAll('.text-slate-200').forEach(el => el.style.color = secondaryColor);
+      
+      document.querySelectorAll('.text-\\[\\#64ffda\\]').forEach(el => el.style.color = primaryColor);
+      document.querySelectorAll('.border-\\[\\#64ffda\\]').forEach(el => el.style.borderColor = primaryColor);
+      document.querySelectorAll('.bg-\\[\\#64ffda\\]\\/10').forEach(el => el.style.backgroundColor = primaryColor + '1a');
+    }
+    
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              config.primary_action_color = value;
+              window.elementSdk.setConfig({ primary_action_color: value });
+            }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              config.secondary_action_color = value;
+              window.elementSdk.setConfig({ secondary_action_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+    
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['hero_greeting', config.hero_greeting || defaultConfig.hero_greeting],
+        ['hero_name', config.hero_name || defaultConfig.hero_name],
+        ['hero_tagline', config.hero_tagline || defaultConfig.hero_tagline],
+        ['about_title', config.about_title || defaultConfig.about_title],
+        ['projects_title', config.projects_title || defaultConfig.projects_title],
+        ['contact_title', config.contact_title || defaultConfig.contact_title],
+        ['contact_button', config.contact_button || defaultConfig.contact_button]
+      ]);
+    }
+    
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+    
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bd94f5f131d572a',t:'MTc2ODM1MzYxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
